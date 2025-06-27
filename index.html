@@ -7,8 +7,48 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="style.css">
+        <script src="main.js" defer></script>
     </head>
-    <body>
-
+    <body class="fade-in">
+        <!-- Dark/Light mode toggle button -->
+        <button
+            id="theme-toggle"
+            class="fade-in theme-toggle-btn"
+            title="Toggle Dark Mode"
+        >
+            <span id="theme-icon" aria-hidden="true">🌙</span>
+        </button>
+        <div id="theme-popup"></div>
+        <h1 class="fade-in" >i am hiboudev.</h1>
+        <nav class="nav-menu fade-in">
+          <ul>
+            <li><a href="#about" class="fade-in">About Me</a></li>
+            <li><a href="#projects" class="fade-in">My Projects</a></li>
+            <li><a href="#contact" class="fade-in">How to Contact Me</a></li>
+          </ul>
+        </nav>
+        <section id="about" class="fade-in">
+            <h2 class="fade-in">About Me</h2>
+            <p id="about-text" class="fade-in">
+                Hi, I'm HibouDev, a web developer who specializes in creating dynamic and responsive web applications.
+                I started programming about 2 months ago, and I am learning JavaScript at the moment, so I can master front-end web development.
+            </p>
+        </section>
+        <section id="projects" class="fade-in">
+            <h2 class="fade-in">My Projects</h2>
+            <p id="projects-text" class="fade-in">
+                You can find my projects on my Github, which you can find here: 
+                <a href="https://github.com/HibouDevv" class="fade-in">https://github.com/HibouDevv</a>
+            </p>
+        </section>
+        <section id="contact" class="fade-in">
+            <h2 class="fade-in">How to Contact Me</h2>
+            <p id="contact-text" class="fade-in">
+                You can contact me via email at 
+                <a href="mailto:hiboubusinessinquiries@gmail.com" class="fade-in">hiboubusinessinquiries@gmail.com</a>
+                <br>
+                You can also reach me on Discord: <b class="fade-in">.hibou</b>
+            </p>
+        </section>
     </body>
 </html>
