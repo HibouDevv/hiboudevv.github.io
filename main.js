@@ -3,6 +3,20 @@ document.addEventListener("DOMContentLoaded", function () {
     const themeIcon = document.getElementById("theme-icon");
     const body = document.body;
 
+    // Typewriter effect for h1
+    const h1 = document.querySelector("h1");
+    const h1Text = "i am hiboudev.";
+    h1.textContent = "";
+    let i = 0;
+    function typeWriter() {
+        if (i < h1Text.length) {
+            h1.textContent += h1Text.charAt(i);
+            i++;
+            setTimeout(typeWriter, 80);
+        }
+    }
+    typeWriter();
+
     function setTheme(isDark) {
         if (isDark) {
             body.classList.add("dark-mode");

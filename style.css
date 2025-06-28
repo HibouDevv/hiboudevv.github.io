@@ -130,3 +130,11 @@ section#contact h2.fade-in { animation-delay: 2.8s; }
 section#contact p.fade-in { animation-delay: 3s; }
 section#contact a.fade-in { animation-delay: 3.2s; }
 section#contact b.fade-in { animation-delay: 3.4s; }
+
+h1::after {
+    content: "|";
+    animation: blink 1s steps(1) infinite;
+}
+@keyframes blink {
+    50% { opacity: 0; }
+}
