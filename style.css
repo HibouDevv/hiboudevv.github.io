@@ -1,4 +1,3 @@
-
 @font-face {
     font-family: 'Lexend';
     src: url(Fonts/Lexend/Lexend-VariableFont_wght.ttf);
@@ -14,25 +13,25 @@ h1, h2, p {
     text-align: center;
 }
 
-.nav-menu ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    gap: 2rem;
-    justify-content: center;
+h1, h2 {
+    display: block;
+    width: 100%;
+    max-width: 100vw;
+    margin: 0 auto;
+    transition: transform 0.3s cubic-bezier(.4,2,.6,1), font-size 0.3s cubic-bezier(.4,2,.6,1);
+    text-align: center;
+    box-sizing: border-box;
+    /* Prevents scaling from causing overflow */
+    will-change: transform;
+    /* Optional: add padding for extra space when scaling */
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
 }
 
-.nav-menu a {
-    font-family: 'Source Code Pro', monospace;
-    text-decoration: none;
-    color: inherit;
-    font-size: 1.1rem;
-    transition: color 0.2s;
-}
-
-.nav-menu a:hover {
-    color: #6366f1; /* Tailwind indigo-500 */
+h1:hover, h2:hover {
+    transform: scale(1.12);
+    /* Optionally, increase font size for extra emphasis: */
+    /* font-size: 2.7rem; */
 }
 
 @media (max-width: 600px) {
@@ -45,7 +44,7 @@ h1, h2, p {
 
 .fade-in {
     opacity: 0;
-    animation: fadeIn 1.2s ease forwards;
+    animation: fadeIn 0.7s ease forwards;
 }
 
 @keyframes fadeIn {
@@ -62,10 +61,6 @@ body.dark-mode {
 
 body.dark-mode a {
     color: #a5b4fc;
-}
-
-body.dark-mode .nav-menu a:hover {
-    color: #818cf8;
 }
 
 body.dark-mode #theme-toggle {
@@ -113,27 +108,136 @@ body.dark-mode #theme-toggle {
 
 /* Fade-in animation delays for sequential appearance */
 h1.fade-in { animation-delay: 0.2s; }
-nav.fade-in { animation-delay: 0.4s; }
-nav .fade-in:nth-child(1) { animation-delay: 0.6s; }
-nav .fade-in:nth-child(2) { animation-delay: 0.8s; }
-nav .fade-in:nth-child(3) { animation-delay: 1s; }
-section#about.fade-in { animation-delay: 1.2s; }
-section#about h2.fade-in { animation-delay: 1.4s; }
+section#about.fade-in { animation-delay: 0.4s; }
 section#about p.fade-in { animation-delay: 1.6s; }
-section#projects.fade-in { animation-delay: 1.8s; }
-section#projects h2.fade-in { animation-delay: 2s; }
+section#projects.fade-in { animation-delay: 0.6s; }
 section#projects p.fade-in { animation-delay: 2.2s; }
 section#projects a.fade-in { animation-delay: 2.4s; }
-section#contact.fade-in { animation-delay: 2.6s; }
-section#contact h2.fade-in { animation-delay: 2.8s; }
+section#contact.fade-in { animation-delay: 0.8; }
 section#contact p.fade-in { animation-delay: 3s; }
 section#contact a.fade-in { animation-delay: 3.2s; }
 section#contact b.fade-in { animation-delay: 3.4s; }
 
-h1::after {
+/* Only add the blinking cursor to h1, not to p or h2 */
+.typewriter-cursor::after {
     content: "|";
     animation: blink 1s steps(1) infinite;
 }
 @keyframes blink {
     50% { opacity: 0; }
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.gallery-section {
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
+    padding: 3rem 0;
+    background: none;
+}
+
+.gallery-track {
+    display: flex;
+    gap: 2vw;
+    align-items: center;
+    will-change: transform;
+    justify-content: flex-start; /* Start with the first image */
+}
+
+.gallery-item {
+    min-width: 60vw;
+    max-width: 65vw;
+    flex: 0 0 auto;
+    padding: 0;
+    background: none;         /* Remove background */
+    border-radius: 0;         /* Remove border-radius */
+    box-shadow: none;         /* Remove box-shadow if you want only the image to have shadow */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: visible;        /* Let the image's border-radius show */
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    max-height: 60vh;
+    object-fit: contain;
+    border-radius: 1.5rem; /* Rounded corners on the image itself */
+    margin-bottom: 1rem;
+    display: block;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s cubic-bezier(.4,2,.6,1), border-radius 0.3s;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+}
+
+.gallery-item img.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Hide horizontal scrollbar for all browsers */
+.gallery-section,
+.gallery-track {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.gallery-section::-webkit-scrollbar,
+.gallery-track::-webkit-scrollbar {
+    display: none;
+}
+
+.skills-section {
+    margin: 3rem auto 4rem auto;
+    max-width: 600px;
+    padding: 2rem 1rem;
+    background: rgba(36, 37, 46, 0.7);
+    border-radius: 1.5rem;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.10);
+}
+
+.skills-section,
+.skills-section * {
+    font-family: Source Code Pro, monospace;
+    /* Or specify your font, e.g.: */
+    /* font-family: 'Inter', 'Segoe UI', Arial, sans-serif; */
+}
+
+.skill {
+    margin-bottom: 2rem;
+}
+
+.skill span {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #a5b4fc;
+    letter-spacing: 1px;
+}
+
+.skill-bar {
+    width: 100%;
+    height: 18px;
+    background: #232336;
+    border-radius: 9px;
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+.skill-level {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #6366f1 0%, #818cf8 100%);
+    border-radius: 9px;
+    transition: width 1.2s cubic-bezier(.4,2,.6,1);
+}
+
+.reveal-letter {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(60px);
 }

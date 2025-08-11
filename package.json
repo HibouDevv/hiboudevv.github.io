@@ -1,4 +1,21 @@
 {
-  "name": "portfolio",
-  "version": "1.0.0"
+  "name": "hiboudev-portfolio",
+  "version": "1.1.0",
+  "description": "HibouDev's personal portfolio showcasing web development skills and projects.",
+  "main": "index.html",
+  "scripts": {
+    "start": "http-server"
+  },
+  "keywords": [
+    "portfolio",
+    "hiboudev",
+    "web development",
+    "hiboudev portfolio",
+    "hiboudevv"
+  ],
+  "author": "HibouDev",
+  "license": "MIT",
+  "dependencies": {
+    "gsap": "^3.13.0"
+  }
 }

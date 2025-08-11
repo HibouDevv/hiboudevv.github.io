@@ -8,6 +8,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="style.css">
         <script src="main.js" defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
     </head>
     <body class="fade-in">
         <!-- Dark/Light mode toggle button -->
@@ -19,36 +21,72 @@
             <span id="theme-icon" aria-hidden="true">🌙</span>
         </button>
         <div id="theme-popup"></div>
-        <h1 class="fade-in" >i am hiboudev.</h1>
-        <nav class="nav-menu fade-in">
-          <ul>
-            <li><a href="#about" class="fade-in">About Me</a></li>
-            <li><a href="#projects" class="fade-in">My Projects</a></li>
-            <li><a href="#contact" class="fade-in">How to Contact Me</a></li>
-          </ul>
-        </nav>
-        <section id="about" class="fade-in">
-            <h2 class="fade-in">About Me</h2>
-            <p id="about-text" class="fade-in">
+        <h1 class="typewriter-cursor">i am hiboudev.</h1>
+        <br>
+        <section id="about">
+            <h2 class="reveal-text">about me.</h2>
+            <p id="about-text">
                 Hi, I'm HibouDev, a web developer who specializes in creating dynamic and responsive web applications.
-                I started programming about 2 months ago, and I am learning JavaScript at the moment, so I can master front-end web development.
+                I started programming around April 2025, and I am learning advanced JavaScript concepts to enhance my skills.
             </p>
         </section>
-        <section id="projects" class="fade-in">
-            <h2 class="fade-in">My Projects</h2>
-            <p id="projects-text" class="fade-in">
+        <section id="projects">
+            <h2 class="reveal-text">my projects.</h2>
+            <p id="projects-text">
                 You can find my projects on my Github, which you can find here: 
-                <a href="https://github.com/HibouDevv" class="fade-in">https://github.com/HibouDevv</a>
+                <a href="https://github.com/HibouDevv">https://github.com/HibouDevv</a>
             </p>
         </section>
-        <section id="contact" class="fade-in">
-            <h2 class="fade-in">How to Contact Me</h2>
-            <p id="contact-text" class="fade-in">
+        <section id="gallery" class="gallery-section">
+            <h2 class="reveal-text">project gallery.</h2>
+            <br>
+            <div class="gallery-track">
+                <div class="gallery-item">
+                    <img src="Images/welcomerbot-project.png" alt="WelcomerBot screenshot">
+                    <p>WelcomerBot</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="Images/todolist-project.png" alt="To-Do List screenshot">
+                    <p>To-Do List</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="Images/maar-white-project.png" alt="MAAR screenshot in light mode">
+                    <p>MAAR Project in light mode</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="Images/maar-black-project.png" alt="MAAR screenshot in dark mode">
+                    <p>MAAR Project in dark mode</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="Images/hiboutype-project.png" alt="HibouType screenshot">
+                    <p>HibouType</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="Images/hiboutype-done-project.png" alt="HibouType screenshot when completed the test">
+                    <p>HibouType when completed the test</p>
+                </div>
+            </div>
+        </section>
+        <section id="skills" class="skills-section">
+            <h2 class="reveal-text">skills.</h2>
+            <div class="skill">
+                <span>html/css</span>
+                <div class="skill-bar"><div class="skill-level" style="width: 0%"></div></div>
+            </div>
+            <div class="skill">
+                <span>javascript</span>
+                <div class="skill-bar"><div class="skill-level" style="width: 0%"></div></div>
+            </div>
+        </section>
+        <section id="contact">
+            <h2 class="reveal-text">how to contact me.</h2>
+            <p id="contact-text">
                 You can contact me via email at 
-                <a href="mailto:hiboubusinessinquiries@gmail.com" class="fade-in">hiboubusinessinquiries@gmail.com</a>
+                <a href="mailto:hiboudevinfo@gmail.com">hiboudevinfo@gmail.com</a>
                 <br>
-                You can also reach me on Discord: <b class="fade-in">.hibou</b>
+                You can also reach me on Discord: <b>.hibou</b>
             </p>
+            <br>
         </section>
     </body>
 </html>
