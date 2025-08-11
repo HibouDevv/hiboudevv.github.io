@@ -1,3 +1,5 @@
+gsap.registerPlugin(ScrollTrigger);
+
 document.addEventListener("DOMContentLoaded", function () {
     const toggleBtn = document.getElementById("theme-toggle");
     const themeIcon = document.getElementById("theme-icon");
@@ -79,8 +81,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Horizontal scroll for gallery with smooth entrance
-    gsap.registerPlugin(ScrollTrigger);
-
     const galleryTrack = document.querySelector(".gallery-track");
     const gallerySection = document.querySelector(".gallery-section");
 
@@ -117,8 +117,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Animate skill bars when skills-section enters viewport
-    gsap.registerPlugin(ScrollTrigger);
-
     const skillLevels = [
         { selector: ".skill-level", percent: [90, 35] } // JavaScript, HTML/CSS
     ];

@@ -178,8 +178,8 @@ body {
     border-radius: 1.5rem; /* Rounded corners on the image itself */
     margin-bottom: 1rem;
     display: block;
-    opacity: 0;
-    transform: translateY(30px);
+    opacity: 1 !important;
+    transform: none !important;
     transition: opacity 0.7s ease, transform 0.7s cubic-bezier(.4,2,.6,1), border-radius 0.3s;
     box-shadow: 0 4px 24px rgba(0,0,0,0.10);
 }
@@ -192,12 +192,12 @@ body {
 /* Hide horizontal scrollbar for all browsers */
 .gallery-section,
 .gallery-track {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;     /* Firefox */
 }
 .gallery-section::-webkit-scrollbar,
 .gallery-track::-webkit-scrollbar {
-    display: none;
+    display: none;             /* Chrome, Safari, Opera */
 }
 
 .skills-section {
