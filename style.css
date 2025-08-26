@@ -1,3 +1,6 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
 @font-face {
     font-family: 'Lexend';
     src: url(Fonts/Lexend/Lexend-VariableFont_wght.ttf);
