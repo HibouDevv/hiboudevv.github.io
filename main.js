@@ -1,10 +1,6 @@
 gsap.registerPlugin(ScrollTrigger);
 
 document.addEventListener("DOMContentLoaded", function () {
-    const toggleBtn = document.getElementById("theme-toggle");
-    const themeIcon = document.getElementById("theme-icon");
-    const body = document.body;
-
     // Typewriter effect for h1 and h2 only
     const typewriterEls = document.querySelectorAll("h1, h2");
     const texts = Array.from(typewriterEls).map(el => el.textContent);
@@ -46,29 +42,6 @@ document.addEventListener("DOMContentLoaded", function () {
         type();
     }
     typeWriterAll();
-
-    // Theme toggle logic (unchanged)
-    function setTheme(isDark) {
-        if (isDark) {
-            body.classList.add("dark-mode");
-            themeIcon.textContent = "☀️";
-            toggleBtn.title = "Toggle Light Mode";
-        } else {
-            body.classList.remove("dark-mode");
-            themeIcon.textContent = "🌙";
-            toggleBtn.title = "Toggle Dark Mode";
-        }
-    }
-
-    // Load saved theme
-    const savedTheme = localStorage.getItem("theme");
-    setTheme(savedTheme === "dark");
-
-    toggleBtn.addEventListener("click", function () {
-        const isDark = !body.classList.contains("dark-mode");
-        setTheme(isDark);
-        localStorage.setItem("theme", isDark ? "dark" : "light");
-    });
 
     // GSAP animation for main elements
     gsap.set(["h1", "nav", "section"], { y: 40, opacity: 0 });
@@ -118,7 +91,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Animate skill bars when skills-section enters viewport
     const skillLevels = [
-        { selector: ".skill-level", percent: [90, 35, 10, 50, 25, 10, 45] } // JavaScript, HTML/CSS, Python, MDX, Manim, GSAP, Mintlify
+        { selector: ".skill-level", percent: [90, 35, 35, 10, 50, 25, 10, 45] } // JavaScript, HTML/CSS, Python, MDX, Manim, GSAP, Mintlify
     ];
 
     const skillsSection = document.querySelector('.skills-section');
@@ -131,7 +104,7 @@ document.addEventListener("DOMContentLoaded", function () {
             onEnter: () => {
                 bars.forEach((bar, i) => {
                     // Set width based on your skill level
-                    const widths = [90, 35, 10, 50, 25, 10, 45]; // JavaScript, HTML/CSS, Python, MDX, Manim, GSAP, Mintlify
+                    const widths = [90, 35, 35, 10, 50, 25, 10, 45]; // JavaScript, HTML/CSS, Python, MDX, Manim, GSAP, Mintlify
                     gsap.to(bar, {
                         width: widths[i] + "%",
                         duration: 1.2,
